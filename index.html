@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,7 @@
     <title>Varuvers Design - Contemporary Fashion Trends</title>
     <style>
         :root {
-            --primary-color: #998d09; /* Vibrant orange */
+            --primary-color: #FF6B35; /* Vibrant orange */
             --secondary-color: #292929; /* Dark black */
             --accent-color: #FF9E1B; /* Lighter orange */
             --text-light: #F7F7F7;
@@ -49,10 +49,6 @@
         
         .logo:hover {
             transform: scale(1.05);
-        }
-        
-        .logo-upload {
-            margin-left: 20px;
         }
         
         nav ul {
@@ -375,13 +371,6 @@
             
             .logo-container {
                 margin-bottom: 1rem;
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .logo-upload {
-                margin-left: 0;
-                margin-top: 10px;
             }
             
             nav ul {
@@ -414,11 +403,7 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="https://via.placeholder.com/150x50?text=Varuvers+Design" alt="Varuvers Design Logo" class="logo" id="companyLogo">
-            <div class="logo-upload">
-                <input type="file" id="logoUpload" accept="image/*" style="display: none;">
-                <button class="btn btn-outline" onclick="document.getElementById('logoUpload').click()">Change Logo</button>
-            </div>
+            <img src="https://via.placeholder.com/150x50?text=Varuvers+Design" alt="Varuvers Design Logo" class="logo">
         </div>
         <nav>
             <ul>
@@ -481,8 +466,7 @@
             
             <!-- Accessories Category -->
             <div class="category-card">
-                <img src="https://i.pinimg.com/736x/67/76/b2/6776b2edc1b044b8131607b2227b211d.jpg
-                " alt="Accessories" class="category-img">
+                <img src="https://i.pinimg.com/736x/67/76/b2/6776b2edc1b044b8131607b2227b211d.jpg" alt="Accessories" class="category-img">
                 <div class="category-content">
                     <h3>Accessories</h3>
                     <p>Elevate your style with our exquisite accessories.</p>
@@ -674,18 +658,6 @@
     </footer>
 
     <script>
-        // Logo upload functionality
-        document.getElementById('logoUpload').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    document.getElementById('companyLogo').src = event.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-        
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
