@@ -3,22 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varuvers Design - Contemporary Kenyan Fashion</title>
+    <title>Varuvers Design - Luxury Kenyan Fashion</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary-color: #FF6B35;
-            --secondary-color: #292929;
-            --accent-color: #FF9E1B;
+            --primary-color: #8A2BE2; /* Vibrant purple */
+            --secondary-color: #0A0A0A; /* Deep black */
+            --accent-color: #9370DB; /* Soft lavender */
+            --gold: #D4AF37;
             --text-light: #F7F7F7;
             --text-dark: #333333;
-            --gold: #D4AF37;
-            --silver: #C0C0C0;
-            --kenyan-red: #BB0000;
-            --kenyan-green: #006600;
-            --kenyan-black: #000000;
-            --kenyan-white: #FFFFFF;
+            --card-bg: #1A1A1A;
         }
         
         * {
@@ -36,14 +32,15 @@
         
         header {
             background-color: var(--secondary-color);
-            padding: 1rem 2rem;
+            padding: 1.5rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 3px solid var(--primary-color);
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid var(--primary-color);
         }
         
         .logo-container {
@@ -53,22 +50,16 @@
         
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
             color: var(--primary-color);
             letter-spacing: 1.5px;
-            transition: all 0.4s ease;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 2px 10px rgba(138, 43, 226, 0.4);
         }
         
         .logo span {
             color: var(--gold);
             font-weight: 800;
-        }
-        
-        .logo:hover {
-            transform: scale(1.03);
-            text-shadow: 0 4px 8px rgba(255, 107, 53, 0.4);
         }
         
         nav ul {
@@ -77,7 +68,7 @@
         }
         
         nav ul li {
-            margin-left: 1.5rem;
+            margin-left: 2rem;
             position: relative;
         }
         
@@ -86,39 +77,43 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: all 0.3s;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 0.8rem 1.2rem;
+            border-radius: 30px;
             font-family: 'Playfair Display', serif;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        nav ul li a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: -1;
+            opacity: 0.9;
         }
         
         nav ul li a:hover {
-            color: var(--primary-color);
-            background-color: rgba(255, 107, 53, 0.1);
+            color: var(--text-light);
+            transform: translateY(-3px);
         }
         
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-        
-        nav ul li a:hover::after {
-            width: 80%;
+        nav ul li a:hover:before {
+            width: 100%;
         }
         
         .hero {
-            background: linear-gradient(rgba(41, 41, 41, 0.85), rgba(41, 41, 41, 0.85)), 
-                        url('https://i.pinimg.com/736x/73/1c/4b/731c4b4c9b4d6b6f0c8f8c8f8c8f8c8f.jpg');
+            background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9)), 
+                        url('https://i.pinimg.com/736x/5e/28/7d/5e287d0c1d9d9d9d9d9d9d9d9d9d9d9d.jpg');
             background-size: cover;
             background-position: center;
-            height: 90vh;
+            height: 95vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -136,9 +131,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://i.pinimg.com/736x/3e/3a/8a/3e3a8a3a3a3a3a3a3a3a3a3a3a3a3a3a.jpg');
-            background-size: 300px;
-            opacity: 0.03;
+            background: url('https://i.pinimg.com/736x/3e/3a/8a/3e3a8a3a3a3a3a3a3a3a3a3a3a3a3a.jpg');
+            background-size: 400px;
+            opacity: 0.05;
             z-index: 0;
         }
         
@@ -149,17 +144,20 @@
         }
         
         .hero h1 {
-            font-size: 4.5rem;
+            font-size: 5rem;
             margin-bottom: 1.5rem;
             color: var(--primary-color);
             font-family: 'Playfair Display', serif;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            letter-spacing: 1px;
-            animation: fadeInDown 1s ease;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);
+            letter-spacing: 2px;
+            animation: fadeInDown 1.2s ease;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .hero p {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 3rem;
             color: var(--text-light);
             line-height: 1.7;
@@ -170,7 +168,7 @@
         
         .hero-btns {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             justify-content: center;
             animation: fadeInUp 1s ease 0.6s forwards;
             opacity: 0;
@@ -178,46 +176,68 @@
         
         .btn {
             display: inline-block;
-            background-color: var(--primary-color);
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
             color: var(--text-light);
-            padding: 1rem 2.5rem;
+            padding: 1.2rem 3rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: none;
             cursor: pointer;
             font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+            letter-spacing: 2px;
+            box-shadow: 0 5px 20px rgba(138, 43, 226, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: -1;
         }
         
         .btn:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255, 158, 27, 0.4);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.6);
+        }
+        
+        .btn:hover:before {
+            width: 100%;
         }
         
         .btn-outline {
-            background-color: transparent;
+            background: transparent;
             border: 2px solid var(--primary-color);
+            color: var(--text-light);
         }
         
         .btn-outline:hover {
-            background-color: var(--primary-color);
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            color: var(--text-light);
         }
         
         .section-title {
             text-align: center;
             margin: 5rem 0 3rem;
-            font-size: 3rem;
-            color: var(--primary-color);
+            font-size: 3.5rem;
             font-family: 'Playfair Display', serif;
             position: relative;
             display: inline-block;
             left: 50%;
             transform: translateX(-50%);
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .section-title::after {
@@ -226,80 +246,86 @@
             bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
+            width: 150px;
             height: 4px;
-            background: var(--accent-color);
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
             border-radius: 2px;
         }
         
         .categories {
             padding: 0 2rem 6rem;
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
         }
         
         .category-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 3rem;
         }
         
         .category-card {
-            background: linear-gradient(145deg, #252525, #1f1f1f);
-            border-radius: 12px;
+            background: var(--card-bg);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(255, 107, 53, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
             position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
         }
         
         .category-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.25);
-            border-color: var(--primary-color);
+            transform: translateY(-20px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 20px 50px rgba(138, 43, 226, 0.3);
         }
         
-        .category-card::before {
+        .category-card:after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 107, 53, 0.05));
+            background: linear-gradient(45deg, transparent, rgba(138, 43, 226, 0.1));
             z-index: 1;
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: opacity 0.5s;
         }
         
-        .category-card:hover::before {
+        .category-card:hover:after {
             opacity: 1;
         }
         
         .category-img {
             width: 100%;
-            height: 300px;
+            height: 350px;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
         .category-card:hover .category-img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
         
         .category-content {
-            padding: 2rem;
+            padding: 2.5rem;
             position: relative;
             z-index: 2;
+            text-align: center;
         }
         
         .category-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
             color: var(--primary-color);
             font-family: 'Playfair Display', serif;
+            transition: all 0.4s;
+        }
+        
+        .category-card:hover .category-content h3 {
+            color: var(--accent-color);
         }
         
         .category-content p {
@@ -307,54 +333,32 @@
             color: var(--text-light);
             opacity: 0.85;
             line-height: 1.6;
-        }
-        
-        .subcategories {
-            margin-top: 1.5rem;
-        }
-        
-        .subcategories h4 {
             font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: var(--accent-color);
+        }
+        
+        .collection-btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 30px;
             font-weight: 600;
+            transition: all 0.4s;
         }
         
-        .subcategories ul {
-            list-style: none;
-            padding-left: 1rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
-        }
-        
-        .subcategories ul li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        
-        .subcategories ul li:hover {
-            color: var(--accent-color);
-            transform: translateX(5px);
-        }
-        
-        .subcategories ul li::before {
-            content: "→";
-            color: var(--primary-color);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
+        .collection-btn:hover {
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            transform: translateY(-3px);
         }
         
         .gallery {
             padding: 6rem 2rem;
-            max-width: 1600px;
+            max-width: 1800px;
             margin: 0 auto;
-            background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)), 
-                        url('https://i.pinimg.com/736x/9c/0a/9d/9c0a9d9d9d9d9d9d9d9d9d9d9d9d9d9d.jpg');
+            background: linear-gradient(rgba(15, 15, 15, 0.95), rgba(15, 15, 15, 0.95)), 
+                        url('https://i.pinimg.com/736x/9c/0a/9d/9c0a9d9d9d9d9d9d9d9d9d9d9d9d9d.jpg');
             background-size: cover;
             background-attachment: fixed;
             position: relative;
@@ -380,30 +384,31 @@
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
             margin-top: 3rem;
         }
         
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 10px;
-            height: 380px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: all 0.4s;
+            border-radius: 12px;
+            height: 400px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
         }
         
         .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.3);
+            transform: translateY(-15px) rotateX(3deg) rotateY(3deg);
+            box-shadow: 0 25px 60px rgba(138, 43, 226, 0.4);
         }
         
         .gallery-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
         .gallery-item:hover .gallery-img {
@@ -418,8 +423,9 @@
             background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
             padding: 2rem 1.5rem;
             transform: translateY(100%);
-            transition: transform 0.5s;
-            backdrop-filter: blur(4px);
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(8px);
+            z-index: 2;
         }
         
         .gallery-item:hover .gallery-overlay {
@@ -429,29 +435,31 @@
         .gallery-overlay h3 {
             color: var(--primary-color);
             margin-bottom: 0.8rem;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-family: 'Playfair Display', serif;
         }
         
         .gallery-overlay p {
             color: var(--text-light);
             opacity: 0.9;
+            font-size: 1.1rem;
         }
         
         .price-tag {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--primary-color);
+            top: 25px;
+            right: 25px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
             color: white;
-            padding: 0.5rem 1.2rem;
+            padding: 0.6rem 1.5rem;
             border-radius: 30px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transform: translateY(-20px);
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            transform: translateY(-30px);
             opacity: 0;
-            transition: all 0.5s ease 0.2s;
+            transition: all 0.6s ease 0.2s;
+            z-index: 3;
         }
         
         .gallery-item:hover .price-tag {
@@ -460,39 +468,39 @@
         }
         
         .testimonials {
-            background: linear-gradient(rgba(26, 26, 26, 0.95), rgba(26, 26, 26, 0.95)), 
+            background: linear-gradient(rgba(20, 20, 20, 0.95), rgba(20, 20, 20, 0.95)), 
                         url('https://i.pinimg.com/736x/5d/5d/5d/5d5d5d5d5d5d5d5d5d5d5d5d5d5d5d5d.jpg');
             background-size: cover;
             background-attachment: fixed;
-            padding: 6rem 2rem;
+            padding: 8rem 2rem;
         }
         
         .testimonial-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
         
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 3.5rem;
             margin-top: 3rem;
         }
         
         .testimonial-card {
-            background: linear-gradient(145deg, #222, #1a1a1a);
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            border-left: 5px solid var(--primary-color);
-            transition: all 0.4s;
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
+            transform-style: preserve-3d;
         }
         
         .testimonial-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.25);
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 20px 50px rgba(138, 43, 226, 0.3);
         }
         
         .testimonial-card::before {
@@ -500,17 +508,18 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            font-size: 5rem;
-            color: rgba(255, 107, 53, 0.1);
+            font-size: 6rem;
+            color: rgba(138, 43, 226, 0.1);
             font-family: 'Playfair Display', serif;
             line-height: 1;
+            z-index: 0;
         }
         
         .testimonial-text {
             font-style: italic;
             margin-bottom: 2rem;
             line-height: 1.8;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             position: relative;
             z-index: 1;
         }
@@ -518,7 +527,7 @@
         .testimonial-author {
             font-weight: 700;
             color: var(--primary-color);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             display: flex;
             align-items: center;
         }
@@ -526,293 +535,35 @@
         .testimonial-author::before {
             content: '';
             display: inline-block;
-            width: 30px;
-            height: 2px;
-            background: var(--accent-color);
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
             margin-right: 15px;
         }
         
-        /* Product Detail Pages */
-        .detail-page {
-            display: none;
-            padding: 4rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .detail-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--primary-color);
-        }
-        
-        .back-btn {
-            background-color: transparent;
-            border: none;
-            color: var(--accent-color);
-            font-size: 1.1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            border-radius: 30px;
-            transition: all 0.3s;
-        }
-        
-        .back-btn:hover {
-            background-color: rgba(255, 158, 27, 0.1);
-            color: var(--primary-color);
-        }
-        
-        .product-detail {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .product-gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
-        
-        .main-img {
-            grid-column: span 3;
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .thumb-img {
-            width: 100%;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-        
-        .thumb-img:hover, .thumb-img.active {
-            transform: scale(1.05);
-            border-color: var(--primary-color);
-        }
-        
-        .product-info {
-            padding: 1.5rem;
-        }
-        
-        .product-info h2 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .product-price {
-            font-size: 2rem;
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .product-description {
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-            color: var(--text-light);
-        }
-        
-        .size-selector {
-            margin-bottom: 2rem;
-        }
-        
-        .size-selector h4 {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .size-options {
-            display: flex;
-            gap: 0.8rem;
-            flex-wrap: wrap;
-        }
-        
-        .size-btn {
-            background-color: transparent;
-            border: 2px solid var(--text-light);
-            color: var(--text-light);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-            font-size: 1rem;
-        }
-        
-        .size-btn:hover, .size-btn.active {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            transform: scale(1.1);
-        }
-        
-        .add-to-cart {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-            align-items: center;
-        }
-        
-        .quantity-selector {
-            display: flex;
-            align-items: center;
-            border: 2px solid var(--text-light);
-            border-radius: 30px;
-            padding: 0.5rem;
-            height: 50px;
-        }
-        
-        .quantity-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-light);
-            font-size: 1.5rem;
-            width: 40px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .quantity-btn:hover {
-            color: var(--primary-color);
-        }
-        
-        .quantity-input {
-            width: 50px;
-            background: transparent;
-            border: none;
-            color: var(--text-light);
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .product-features {
-            background: rgba(41, 41, 41, 0.7);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-        }
-        
-        .product-features h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .product-features ul {
-            list-style: none;
-            padding-left: 1.5rem;
-        }
-        
-        .product-features ul li {
-            margin-bottom: 0.8rem;
-            position: relative;
-        }
-        
-        .product-features ul li::before {
-            content: "•";
-            color: var(--accent-color);
-            position: absolute;
-            left: -1.5rem;
-            font-size: 1.5rem;
-        }
-        
-        .related-products {
-            margin-top: 4rem;
-        }
-        
-        .related-products h3 {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .related-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .related-card {
-            background: linear-gradient(145deg, #252525, #1f1f1f);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.4s;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .related-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.25);
-        }
-        
-        .related-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-        
-        .related-info {
-            padding: 1.5rem;
-        }
-        
-        .related-info h4 {
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-        
-        .related-price {
-            color: var(--accent-color);
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-        
         footer {
-            background: linear-gradient(to bottom, #151515, #000);
-            padding: 5rem 2rem 3rem;
+            background: linear-gradient(to bottom, #0A0A0A, #000);
+            padding: 6rem 2rem 3rem;
             text-align: center;
             position: relative;
         }
         
         .footer-content {
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3.5rem;
             text-align: left;
         }
         
         .footer-column h3 {
             color: var(--primary-color);
-            margin-bottom: 1.8rem;
-            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 1.6rem;
             font-family: 'Playfair Display', serif;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
         
         .footer-column h3::after {
@@ -820,9 +571,9 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--accent-color);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
         }
         
         .footer-column ul {
@@ -830,32 +581,34 @@
         }
         
         .footer-column ul li {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
         
         .footer-column ul li a {
             color: var(--text-light);
             text-decoration: none;
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             opacity: 0.8;
             display: block;
-            padding: 0.5rem 0;
+            padding: 0.6rem 0;
             position: relative;
+            font-size: 1.1rem;
         }
         
         .footer-column ul li a:hover {
-            color: var(--primary-color);
+            color: var(--accent-color);
             opacity: 1;
-            transform: translateX(10px);
+            transform: translateX(15px);
         }
         
         .footer-column ul li a::before {
             content: '›';
             position: absolute;
-            left: -20px;
+            left: -25px;
             opacity: 0;
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             color: var(--primary-color);
+            font-size: 1.5rem;
         }
         
         .footer-column ul li a:hover::before {
@@ -873,63 +626,102 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: #222;
+            width: 50px;
+            height: 50px;
+            background: var(--card-bg);
             color: var(--text-light);
-            font-size: 1.3rem;
-            transition: all 0.3s;
+            font-size: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(138, 43, 226, 0.3);
         }
         
         .social-links a:hover {
-            background: var(--primary-color);
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.4);
         }
         
         .newsletter-form {
             display: flex;
             margin-top: 1.5rem;
+            flex-direction: column;
+            gap: 1.5rem;
         }
         
         .newsletter-form input {
-            flex: 1;
-            padding: 0.9rem 1.2rem;
-            background: #222;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid rgba(138, 43, 226, 0.3);
             color: var(--text-light);
-            border-radius: 30px 0 0 30px;
+            border-radius: 30px;
             outline: none;
-            transition: all 0.3s;
+            transition: all 0.4s;
+            font-size: 1.1rem;
         }
         
         .newsletter-form input:focus {
             border-color: var(--primary-color);
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
         }
         
         .newsletter-form button {
-            background: var(--primary-color);
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
             color: white;
             border: none;
-            padding: 0 1.5rem;
-            border-radius: 0 30px 30px 0;
+            padding: 1rem;
+            border-radius: 30px;
             cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
         }
         
         .newsletter-form button:hover {
-            background: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(138, 43, 226, 0.4);
         }
         
         .copyright {
-            margin-top: 5rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 6rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(138, 43, 226, 0.2);
             opacity: 0.7;
-            font-size: 0.9rem;
+            font-size: 1rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+            }
         }
         
         @media (max-width: 992px) {
@@ -938,11 +730,7 @@
             }
             
             .section-title {
-                font-size: 2.5rem;
-            }
-            
-            .product-detail {
-                grid-template-columns: 1fr;
+                font-size: 2.8rem;
             }
         }
         
@@ -953,8 +741,8 @@
             }
             
             .logo {
-                font-size: 2.2rem;
-                margin-bottom: 1rem;
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
             }
             
             nav ul {
@@ -967,11 +755,11 @@
             }
             
             .hero {
-                height: 80vh;
+                height: 85vh;
             }
             
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 3rem;
             }
             
             .hero p {
@@ -981,6 +769,7 @@
             .hero-btns {
                 flex-direction: column;
                 align-items: center;
+                gap: 1.5rem;
             }
             
             .btn {
@@ -989,17 +778,17 @@
             }
             
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
         }
         
-        @media (max-width: 480px) {
+        @media (max-width: 576px) {
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             
             .category-grid {
@@ -1015,12 +804,7 @@
             }
             
             .section-title {
-                font-size: 2rem;
-            }
-            
-            .back-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
+                font-size: 2.2rem;
             }
         }
     </style>
@@ -1033,7 +817,7 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#categories">Collections</a></li>
+                <li><a href="#collections">Collections</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -1041,529 +825,233 @@
         </nav>
     </header>
 
-    <!-- Main Content Area -->
-    <div id="main-content">
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <h1>Elevate Your Style with Varuvers</h1>
-                <p>Discover Kenya's most exclusive contemporary fashion collection. From Nairobi to Mombasa, we bring you handcrafted elegance that tells a story.</p>
-                <div class="hero-btns">
-                    <a href="#categories" class="btn">Explore Collections</a>
-                    <a href="#contact" class="btn btn-outline">Book Consultation</a>
-                </div>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Elegance Redefined</h1>
+            <p>Experience the fusion of Kenyan heritage with contemporary luxury. Each piece tells a story of craftsmanship and tradition.</p>
+            <div class="hero-btns">
+                <a href="#collections" class="btn">Explore Collections</a>
+                <a href="#contact" class="btn btn-outline">Book Consultation</a>
             </div>
-        </section>
-
-        <section class="categories" id="categories">
-            <h2 class="section-title">Our Collections</h2>
-            <div class="category-grid">
-                <!-- Headwear Category -->
-                <div class="category-card" onclick="showDetailPage('headwear')">
-                    <img src="https://i.pinimg.com/736x/a5/0f/e6/a50fe67ca2495b5d5404fd916501bda5.jpg" alt="Headwear" class="category-img">
-                    <div class="category-content">
-                        <h3>Headwear</h3>
-                        <p>Complete your look with our stylish headwear collection crafted by Kenyan artisans.</p>
-                        <div class="subcategories">
-                            <h4>Featured Styles:</h4>
-                            <ul>
-                                <li>Maasai Beaded Hats</li>
-                                <li>Designer Caps</li>
-                                <li>Wool Beanies</li>
-                                <li>Silk Headbands</li>
-                                <li>Kikoy Turbans</li>
-                                <li>Sun Hats</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Footwear Category -->
-                <div class="category-card" onclick="showDetailPage('footwear')">
-                    <img src="https://i.pinimg.com/736x/27/69/34/2769346f88f52c75bfe17064b76d0b2f.jpg" alt="Footwear" class="category-img">
-                    <div class="category-content">
-                        <h3>Footwear</h3>
-                        <p>Step out in style with our premium footwear collection made from authentic Kenyan materials.</p>
-                        <div class="subcategories">
-                            <h4>Featured Styles:</h4>
-                            <ul>
-                                <li>Hand-beaded Sandals</li>
-                                <li>Designer Sneakers</li>
-                                <li>Leather Boots</li>
-                                <li>African Print Heels</li>
-                                <li>Casual Loafers</li>
-                                <li>Traditional Mules</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Accessories Category -->
-                <div class="category-card" onclick="showDetailPage('accessories')">
-                    <img src="https://i.pinimg.com/736x/67/76/b2/6776b2edc1b044b8131607b2227b211d.jpg" alt="Accessories" class="category-img">
-                    <div class="category-content">
-                        <h3>Accessories</h3>
-                        <p>Elevate your style with our exquisite accessories featuring authentic Kenyan craftsmanship.</p>
-                        <div class="subcategories">
-                            <h4>Featured Styles:</h4>
-                            <ul>
-                                <li>Beaded Chains</li>
-                                <li>Statement Watches</li>
-                                <li>Leather Bracelets</li>
-                                <li>Gold & Silver Rings</li>
-                                <li>Maasai Belts</li>
-                                <li>Designer Scarves</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Apparel Category -->
-                <div class="category-card" onclick="showDetailPage('apparel')">
-                    <img src="https://i.pinimg.com/736x/c8/66/9c/c8669c50fd325d0485cf1384ce25b08c.jpg" alt="Apparel" class="category-img">
-                    <div class="category-content">
-                        <h3>Apparel</h3>
-                        <p>Discover our trendy clothing collection for all occasions featuring vibrant Kenyan prints.</p>
-                        <div class="subcategories">
-                            <h4>Featured Styles:</h4>
-                            <ul>
-                                <li>Kitenge Dresses</li>
-                                <li>Designer T-Shirts</li>
-                                <li>Handwoven Jackets</li>
-                                <li>Kikoy Shorts</li>
-                                <li>Linen Shirts</li>
-                                <li>Evening Gowns</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Bags Category -->
-                <div class="category-card" onclick="showDetailPage('bags')">
-                    <img src="https://i.pinimg.com/736x/86/6c/4d/866c4d4d4d4d4d4d4d4d4d4d4d4d4d4d.jpg" alt="Bags" class="category-img">
-                    <div class="category-content">
-                        <h3>Bags</h3>
-                        <p>Carry your essentials in style with our designer bags featuring authentic African patterns.</p>
-                        <div class="subcategories">
-                            <h4>Featured Styles:</h4>
-                            <ul>
-                                <li>Beaded Handbags</li>
-                                <li>Leather Backpacks</li>
-                                <li>Evening Clutches</li>
-                                <li>Market Totes</li>
-                                <li>Crossbody Bags</li>
-                                <li>Traditional Baskets</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Jewelry Category -->
-                <div class="category-card" onclick="showDetailPage('jewelry')">
-                    <img src="https://i.pinimg.com/736x/25/d6/e4/25d6e4a2644188a55e1678a186f20f88.jpg" alt="Jewelry" class="category-img">
-                    <div class="category-content">
-                        <h3>Jewelry</h3>
-                        <p>Adorn yourself with our stunning jewelry pieces featuring Kenyan semi-precious stones.</p>
-                        <div class="subcategories">
-                            <h4>Featured Styles:</h4>
-                            <ul>
-                                <li>Beaded Necklaces</li>
-                                <li>Gold Earrings</li>
-                                <li>Silver Bangles</li>
-                                <li>Statement Brooches</li>
-                                <li>Turkana Beadwork</li>
-                                <li>Anklets & Toe Rings</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="gallery" id="gallery">
-            <h2 class="section-title">Featured Collection</h2>
-            <div class="gallery-content">
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="https://i.pinimg.com/736x/93/86/6c/93866c25dbc4e3a62b4ee18500c45c99.jpg" alt="Urban Streetwear" class="gallery-img">
-                        <div class="price-tag">KSh 12,500</div>
-                        <div class="gallery-overlay">
-                            <h3>Urban Streetwear</h3>
-                            <p>Latest Nairobi street fashion trends</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://i.pinimg.com/736x/e5/9b/1a/e59b1ac93ab128b08d1c3b0156336f19.jpg" alt="Casual Elegance" class="gallery-img">
-                        <div class="price-tag">KSh 8,900</div>
-                        <div class="gallery-overlay">
-                            <h3>Casual Elegance</h3>
-                            <p>Comfort meets style for Nairobi professionals</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://i.pinimg.com/736x/47/89/db/4789db4a41c8151c6114a4ddef783cc9.jpg" alt="Luxury Accessories" class="gallery-img">
-                        <div class="price-tag">KSh 15,200</div>
-                        <div class="gallery-overlay">
-                            <h3>Luxury Accessories</h3>
-                            <p>Premium quality materials from Kenyan artisans</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://i.pinimg.com/736x/00/51/51/00515146b714606b0d2686df382ffb0e.jpg" alt="Summer Collection" class="gallery-img">
-                        <div class="price-tag">KSh 7,800</div>
-                        <div class="gallery-overlay">
-                            <h3>Coastal Collection</h3>
-                            <p>Light and breezy styles for Mombasa</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://i.pinimg.com/736x/c5/e5/6b/c5e56b1c97dd3f3ca55780ff9f5860ec.jpg" alt="Formal Attire" class="gallery-img">
-                        <div class="price-tag">KSh 21,500</div>
-                        <div class="gallery-overlay">
-                            <h3>Formal Attire</h3>
-                            <p>Sophisticated designs for special occasions</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://i.pinimg.com/736x/63/8f/b8/638fb8f935378d05fa86448a845b3991.jpg" alt="Winter Collection" class="gallery-img">
-                        <div class="price-tag">KSh 18,300</div>
-                        <div class="gallery-overlay">
-                            <h3>Highland Collection</h3>
-                            <p>Warm and stylish for Kenyan highlands</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials" id="testimonials">
-            <h2 class="section-title">Client Experiences</h2>
-            <div class="testimonial-container">
-                <div class="testimonial-grid">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Varuvers Design completely transformed my wardrobe. Their attention to detail and contemporary designs are unmatched in Kenya. The Maasai-inspired pieces I bought have become conversation starters at every event!"</p>
-                        <p class="testimonial-author">- Triza Wairimu, Nairobi</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"I've been a loyal customer for three years. Their footwear collection is not only stylish but incredibly comfortable for Nairobi's bustling streets. The hand-beaded sandals are my absolute favorite!"</p>
-                        <p class="testimonial-author">- James Kariuki, Mombasa</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"The quality of their jewelry exceeded my expectations. I constantly receive compliments whenever I wear their Turkana bead pieces. Varuvers has mastered the blend of traditional Kenyan craftsmanship with contemporary design."</p>
-                        <p class="testimonial-author">- Sarah Njeri, Kisumu</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Product Detail Pages -->
-    <div class="detail-page" id="headwear-detail">
-        <div class="detail-header">
-            <button class="back-btn" onclick="showMainPage()">
-                <i class="fas fa-arrow-left"></i> Back to Collections
-            </button>
-            <h2 class="section-title">Headwear Collection</h2>
         </div>
-        
-        <div class="product-detail">
-            <div class="product-gallery">
-                <img src="https://i.pinimg.com/736x/a5/0f/e6/a50fe67ca2495b5d5404fd916501bda5.jpg" alt="Headwear" class="main-img" id="headwear-main">
-                <img src="https://i.pinimg.com/736x/2e/9a/1d/2e9a1d2f6a96a6b8b4a3d3c6d1a3e3c3.jpg" alt="Headwear Thumb 1" class="thumb-img active" onclick="changeMainImage('headwear', 'https://i.pinimg.com/736x/2e/9a/1d/2e9a1d2f6a96a6b8b4a3d3c6d1a3e3c3.jpg')">
-                <img src="https://i.pinimg.com/736x/7d/9b/0d/7d9b0d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Headwear Thumb 2" class="thumb-img" onclick="changeMainImage('headwear', 'https://i.pinimg.com/736x/7d/9b/0d/7d9b0d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg')">
-                <img src="https://i.pinimg.com/736x/4a/8b/0d/4a8b0d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Headwear Thumb 3" class="thumb-img" onclick="changeMainImage('headwear', 'https://i.pinimg.com/736x/4a/8b/0d/4a8b0d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg')">
+    </section>
+
+    <section class="categories" id="collections">
+        <h2 class="section-title">Our Collections</h2>
+        <div class="category-grid">
+            <!-- Maasai Collection -->
+            <div class="category-card">
+                <img src="https://i.pinimg.com/736x/6c/77/1c/6c771c1c1c1c1c1c1c1c1c1c1c1c1c1c.jpg" alt="Maasai Collection" class="category-img">
+                <div class="category-content">
+                    <h3>Maasai Heritage</h3>
+                    <p>Authentic Maasai beadwork and designs that celebrate Kenya's most iconic culture.</p>
+                    <a href="#" class="collection-btn">View Collection</a>
+                </div>
             </div>
             
-            <div class="product-info">
-                <h2>Maasai Beaded Fedora Hat</h2>
-                <p class="product-price">KSh 4,500</p>
-                <p class="product-description">
-                    Our signature fedora hat is crafted from premium Kenyan wool with traditional Maasai beadwork. 
-                    Designed for both style and cultural significance, this hat features intricate bead patterns 
-                    that tell a story of Kenyan heritage. Perfect for both casual and formal occasions.
-                </p>
-                
-                <div class="size-selector">
-                    <h4>Select Size:</h4>
-                    <div class="size-options">
-                        <button class="size-btn active">S</button>
-                        <button class="size-btn">M</button>
-                        <button class="size-btn">L</button>
-                        <button class="size-btn">XL</button>
-                    </div>
+            <!-- Kikoy Collection -->
+            <div class="category-card">
+                <img src="https://i.pinimg.com/736x/7d/88/8d/7d888d8d8d8d8d8d8d8d8d8d8d8d8d.jpg" alt="Kikoy Collection" class="category-img">
+                <div class="category-content">
+                    <h3>Kikoy Classics</h3>
+                    <p>Luxurious Kikoy fabrics transformed into modern, sophisticated fashion pieces.</p>
+                    <a href="#" class="collection-btn">View Collection</a>
                 </div>
-                
-                <div class="add-to-cart">
-                    <div class="quantity-selector">
-                        <button class="quantity-btn">-</button>
-                        <input type="text" class="quantity-input" value="1">
-                        <button class="quantity-btn">+</button>
-                    </div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                
-                <div class="product-features">
-                    <h4>Features:</h4>
-                    <ul>
-                        <li>100% Kenyan Wool</li>
-                        <li>Authentic Maasai beadwork</li>
-                        <li>Hand-stitched by Kenyan artisans</li>
-                        <li>Leather sweatband for comfort</li>
-                        <li>Available in 4 sizes</li>
-                        <li>Water-resistant finish</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div class="related-products">
-            <h3>Related Headwear</h3>
-            <div class="related-grid">
-                <div class="related-card" onclick="showDetailPage('headwear')">
-                    <img src="https://i.pinimg.com/736x/5c/9d/5e/5c9d5e3a6e0a9a0a9b0a9b0a9b0a9b0a.jpg" alt="Beanie" class="related-img">
-                    <div class="related-info">
-                        <h4>Kikoy Beanie</h4>
-                        <p class="related-price">KSh 2,200</p>
-                    </div>
-                </div>
-                <div class="related-card" onclick="showDetailPage('headwear')">
-                    <img src="https://i.pinimg.com/736x/8a/0b/1d/8a0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Cap" class="related-img">
-                    <div class="related-info">
-                        <h4>Nairobi Baseball Cap</h4>
-                        <p class="related-price">KSh 1,800</p>
-                    </div>
-                </div>
-                <div class="related-card" onclick="showDetailPage('headwear')">
-                    <img src="https://i.pinimg.com/736x/9c/0b/1d/9c0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Headband" class="related-img">
-                    <div class="related-info">
-                        <h4>Kitenge Headband</h4>
-                        <p class="related-price">KSh 1,200</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="detail-page" id="footwear-detail">
-        <div class="detail-header">
-            <button class="back-btn" onclick="showMainPage()">
-                <i class="fas fa-arrow-left"></i> Back to Collections
-            </button>
-            <h2 class="section-title">Footwear Collection</h2>
-        </div>
-        
-        <div class="product-detail">
-            <div class="product-gallery">
-                <img src="https://i.pinimg.com/736x/27/69/34/2769346f88f52c75bfe17064b76d0b2f.jpg" alt="Footwear" class="main-img" id="footwear-main">
-                <img src="https://i.pinimg.com/736x/3a/0b/1d/3a0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Footwear Thumb 1" class="thumb-img active" onclick="changeMainImage('footwear', 'https://i.pinimg.com/736x/3a/0b/1d/3a0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg')">
-                <img src="https://i.pinimg.com/736x/4b/0b/1d/4b0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Footwear Thumb 2" class="thumb-img" onclick="changeMainImage('footwear', 'https://i.pinimg.com/736x/4b/0b/1d/4b0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg')">
-                <img src="https://i.pinimg.com/736x/5c/0b/1d/5c0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Footwear Thumb 3" class="thumb-img" onclick="changeMainImage('footwear', 'https://i.pinimg.com/736x/5c/0b/1d/5c0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg')">
             </div>
             
-            <div class="product-info">
-                <h2>Hand-Beaded Leather Sandals</h2>
-                <p class="product-price">KSh 6,800</p>
-                <p class="product-description">
-                    Crafted from premium Kenyan leather, these sandals feature traditional Turkana beadwork. 
-                    Designed for comfort and cultural expression, they feature a cushioned footbed and durable 
-                    rubber sole. Each pair is unique, handcrafted by skilled artisans from Northern Kenya.
-                </p>
-                
-                <div class="size-selector">
-                    <h4>Select Size:</h4>
-                    <div class="size-options">
-                        <button class="size-btn">5</button>
-                        <button class="size-btn">6</button>
-                        <button class="size-btn active">7</button>
-                        <button class="size-btn">8</button>
-                        <button class="size-btn">9</button>
-                    </div>
+            <!-- Contemporary Collection -->
+            <div class="category-card">
+                <img src="https://i.pinimg.com/736x/8e/99/9a/8e999a9a9a9a9a9a9a9a9a9a9a9a9a.jpg" alt="Contemporary Collection" class="category-img">
+                <div class="category-content">
+                    <h3>Contemporary Designs</h3>
+                    <p>Modern fashion with Kenyan influences for the sophisticated global citizen.</p>
+                    <a href="#" class="collection-btn">View Collection</a>
                 </div>
-                
-                <div class="add-to-cart">
-                    <div class="quantity-selector">
-                        <button class="quantity-btn">-</button>
-                        <input type="text" class="quantity-input" value="1">
-                        <button class="quantity-btn">+</button>
-                    </div>
-                    <button class="btn">Add to Cart</button>
-                </div>
-                
-                <div class="product-features">
-                    <h4>Features:</h4>
-                    <ul>
-                        <li>Genuine Kenyan leather</li>
-                        <li>Hand-beaded by Turkana artisans</li>
-                        <li>Memory foam footbed</li>
-                        <li>Anti-slip rubber sole</li>
-                        <li>Available in 3 color patterns</li>
-                        <li>Eco-friendly production</li>
-                    </ul>
+            </div>
+            
+            <!-- Jewelry Collection -->
+            <div class="category-card">
+                <img src="https://i.pinimg.com/736x/9f/aa/ab/9faaabababababababababababababab.jpg" alt="Jewelry Collection" class="category-img">
+                <div class="category-content">
+                    <h3>Artisan Jewelry</h3>
+                    <p>Handcrafted jewelry featuring Kenyan semi-precious stones and traditional techniques.</p>
+                    <a href="#" class="collection-btn">View Collection</a>
                 </div>
             </div>
         </div>
-        
-        <div class="related-products">
-            <h3>Related Footwear</h3>
-            <div class="related-grid">
-                <div class="related-card" onclick="showDetailPage('footwear')">
-                    <img src="https://i.pinimg.com/736x/6d/0b/1d/6d0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Sneakers" class="related-img">
-                    <div class="related-info">
-                        <h4>Nairobi Urban Sneakers</h4>
-                        <p class="related-price">KSh 5,500</p>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <h2 class="section-title">Featured Pieces</h2>
+        <div class="gallery-content">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/0a/bb/cc/0abbcccccccccccccccccccccccccccc.jpg" alt="Maasai Beaded Dress" class="gallery-img">
+                    <div class="price-tag">KSh 15,800</div>
+                    <div class="gallery-overlay">
+                        <h3>Maasai Beaded Dress</h3>
+                        <p>Hand-beaded with traditional Maasai patterns</p>
                     </div>
                 </div>
-                <div class="related-card" onclick="showDetailPage('footwear')">
-                    <img src="https://i.pinimg.com/736x/7e/0b/1d/7e0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Heels" class="related-img">
-                    <div class="related-info">
-                        <h4>Kitenge Print Heels</h4>
-                        <p class="related-price">KSh 7,200</p>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/1b/cc/dd/1bccdddddddddddddddddddddddddddd.jpg" alt="Kikoy Evening Gown" class="gallery-img">
+                    <div class="price-tag">KSh 18,500</div>
+                    <div class="gallery-overlay">
+                        <h3>Kikoy Evening Gown</h3>
+                        <p>Elegant gown made from premium Kikoy fabric</p>
                     </div>
                 </div>
-                <div class="related-card" onclick="showDetailPage('footwear')">
-                    <img src="https://i.pinimg.com/736x/8f/0b/1d/8f0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Sandals" class="related-img">
-                    <div class="related-info">
-                        <h4>Coastal Flip Flops</h4>
-                        <p class="related-price">KSh 3,200</p>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/2c/dd/ee/2cddeeeeeeeeeeeeeeeeeeeeeeeeeeee.jpg" alt="Beaded Leather Bag" class="gallery-img">
+                    <div class="price-tag">KSh 9,200</div>
+                    <div class="gallery-overlay">
+                        <h3>Beaded Leather Bag</h3>
+                        <p>Handcrafted with Maasai beadwork details</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/3d/ee/ff/3deefffffffffffffffffffffffffffff.jpg" alt="Traditional Necklace" class="gallery-img">
+                    <div class="price-tag">KSh 6,500</div>
+                    <div class="gallery-overlay">
+                        <h3>Samburu Necklace</h3>
+                        <p>Authentic Kenyan tribal jewelry</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/4e/ff/11/4eff1111111111111111111111111111.jpg" alt="Kikoy Men's Shirt" class="gallery-img">
+                    <div class="price-tag">KSh 7,800</div>
+                    <div class="gallery-overlay">
+                        <h3>Kikoy Men's Shirt</h3>
+                        <p>Premium cotton with traditional patterns</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/5f/11/22/5f112222222222222222222222222222.jpg" alt="Maasai Sandals" class="gallery-img">
+                    <div class="price-tag">KSh 5,400</div>
+                    <div class="gallery-overlay">
+                        <h3>Maasai Leather Sandals</h3>
+                        <p>Handcrafted with authentic beadwork</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <!-- Other detail pages would follow the same structure -->
-    <!-- For brevity, I've included two examples -->
-    
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">Client Experiences</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The Maasai beaded dress I purchased from Varuvers is absolutely stunning. The craftsmanship is exceptional, and I received countless compliments at the Nairobi Art Festival. The blend of traditional Kenyan design with contemporary fashion is simply perfect."</p>
+                    <p class="testimonial-author">- Amina Kibaki, Nairobi</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"As someone who values sustainable fashion, I was thrilled to discover Varuvers. Their Kikoy collection uses ethically sourced materials while preserving traditional weaving techniques. The Kikoy shirt I bought is now my favorite piece in my wardrobe."</p>
+                    <p class="testimonial-author">- David Ochieng, Mombasa</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The attention to detail in their jewelry line is remarkable. My Samburu necklace arrived beautifully packaged with a card explaining its cultural significance. It's not just jewelry - it's wearable art that tells a story."</p>
+                    <p class="testimonial-author">- Sarah Kamau, Kisumu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-column">
                 <h3>About Varuvers</h3>
                 <ul>
                     <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Artisan Partnerships</a></li>
                     <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Press Features</a></li>
                     <li><a href="#">Careers</a></li>
-                    <li><a href="#">Press</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h3>Customer Service</h3>
+                <h3>Collections</h3>
+                <ul>
+                    <li><a href="#">Maasai Heritage</a></li>
+                    <li><a href="#">Kikoy Classics</a></li>
+                    <li><a href="#">Contemporary Designs</a></li>
+                    <li><a href="#">Artisan Jewelry</a></li>
+                    <li><a href="#">Seasonal Collections</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Care</h3>
                 <ul>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">Shipping Policy</a></li>
                     <li><a href="#">Returns & Exchanges</a></li>
                     <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Store Locator</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h3>Connect With Us</h3>
-                <ul>
-                    <li><a href="https://www.instagram.com/varuversdesign" target="_blank">Instagram</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Pinterest</a></li>
-                </ul>
+                <h3>Connect</h3>
+                <p>Subscribe for exclusive offers and collection previews</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </div>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/varuversdesign" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/varuvers?igsh=MTJwd3B4cG9hNTlnYQ==" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-pinterest-p"></i></a>
                 </div>
             </div>
-            <div class="footer-column">
-                <h3>Newsletter</h3>
-                <p>Subscribe to get special offers, free giveaways, and new collection announcements.</p>
-                <form>
-                    <input type="email" placeholder="Your email address" style="padding: 0.8rem; width: 100%; margin: 1rem 0; background: #333; border: none; color: white; border-radius: 4px;">
-                    <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
-                </form>
-            </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2023 Varuvers Design. All rights reserved.</p>
+            <p>&copy; 2023 Varuvers Design. Crafted with passion in Nairobi, Kenya. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Function to show product detail page
-        function showDetailPage(category) {
-            // Hide main content
-            document.getElementById('main-content').style.display = 'none';
-            
-            // Hide all detail pages
-            document.querySelectorAll('.detail-page').forEach(page => {
-                page.style.display = 'none';
-            });
-            
-            // Show the selected detail page
-            document.getElementById(`${category}-detail`).style.display = 'block';
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-        
-        // Function to return to main page
-        function showMainPage() {
-            // Hide all detail pages
-            document.querySelectorAll('.detail-page').forEach(page => {
-                page.style.display = 'none';
-            });
-            
-            // Show main content
-            document.getElementById('main-content').style.display = 'block';
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-        
-        // Change main image in product gallery
-        function changeMainImage(category, imgSrc) {
-            document.getElementById(`${category}-main`).src = imgSrc;
-            
-            // Update active thumbnail
-            const thumbnails = document.querySelectorAll(`#${category}-detail .thumb-img`);
-            thumbnails.forEach(thumb => {
-                thumb.classList.remove('active');
-                if (thumb.src === imgSrc) {
-                    thumb.classList.add('active');
-                }
-            });
-        }
-        
-        // Add interactivity to size buttons
-        document.addEventListener('DOMContentLoaded', function() {
-            const sizeButtons = document.querySelectorAll('.size-btn');
-            sizeButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons in this group
-                    const parent = this.closest('.size-options');
-                    parent.querySelectorAll('.size-btn').forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                });
-            });
-            
-            // Quantity selector functionality
-            const minusButtons = document.querySelectorAll('.quantity-btn:first-child');
-            const plusButtons = document.querySelectorAll('.quantity-btn:last-child');
-            const quantityInputs = document.querySelectorAll('.quantity-input');
-            
-            minusButtons.forEach((button, index) => {
-                button.addEventListener('click', function() {
-                    let value = parseInt(quantityInputs[index].value);
-                    if (value > 1) {
-                        quantityInputs[index].value = value - 1;
-                    }
-                });
-            });
-            
-            plusButtons.forEach((button, index) => {
-                button.addEventListener('click', function() {
-                    let value = parseInt(quantityInputs[index].value);
-                    quantityInputs[index].value = value + 1;
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
         });
+        
+        // Animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.category-card, .gallery-item, .testimonial-card').forEach(el => {
+            el.classList.add('hidden');
+            observer.observe(el);
+        });
+        
+        // Add CSS for scroll animations
+        const style = document.createElement('style');
+        style.textContent = `
+            .hidden {
+                opacity: 0;
+                transform: translateY(50px) rotateX(10deg);
+                transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+            
+            .show {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
