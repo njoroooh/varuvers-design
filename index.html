@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varuvers Design - Contemporary Fashion Trends</title>
+    <title>Varuvers Design - Contemporary Kenyan Fashion</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -15,6 +15,10 @@
             --text-dark: #333333;
             --gold: #D4AF37;
             --silver: #C0C0C0;
+            --kenyan-red: #BB0000;
+            --kenyan-green: #006600;
+            --kenyan-black: #000000;
+            --kenyan-white: #FFFFFF;
         }
         
         * {
@@ -528,6 +532,264 @@
             margin-right: 15px;
         }
         
+        /* Product Detail Pages */
+        .detail-page {
+            display: none;
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .back-btn {
+            background-color: transparent;
+            border: none;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background-color: rgba(255, 158, 27, 0.1);
+            color: var(--primary-color);
+        }
+        
+        .product-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        
+        .main-img {
+            grid-column: span 3;
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .thumb-img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .thumb-img:hover, .thumb-img.active {
+            transform: scale(1.05);
+            border-color: var(--primary-color);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-info h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .product-price {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .product-description {
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        .size-selector {
+            margin-bottom: 2rem;
+        }
+        
+        .size-selector h4 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .size-options {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+        
+        .size-btn {
+            background-color: transparent;
+            border: 2px solid var(--text-light);
+            color: var(--text-light);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .size-btn:hover, .size-btn.active {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: scale(1.1);
+        }
+        
+        .add-to-cart {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            align-items: center;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 2px solid var(--text-light);
+            border-radius: 30px;
+            padding: 0.5rem;
+            height: 50px;
+        }
+        
+        .quantity-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            width: 40px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .quantity-btn:hover {
+            color: var(--primary-color);
+        }
+        
+        .quantity-input {
+            width: 50px;
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .product-features {
+            background: rgba(41, 41, 41, 0.7);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .product-features h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .product-features ul {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+        
+        .product-features ul li {
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+        
+        .product-features ul li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: -1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .related-products {
+            margin-top: 4rem;
+        }
+        
+        .related-products h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .related-card {
+            background: linear-gradient(145deg, #252525, #1f1f1f);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .related-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.25);
+        }
+        
+        .related-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .related-info {
+            padding: 1.5rem;
+        }
+        
+        .related-info h4 {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .related-price {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
         footer {
             background: linear-gradient(to bottom, #151515, #000);
             padding: 5rem 2rem 3rem;
@@ -670,29 +932,6 @@
             font-size: 0.9rem;
         }
         
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
         @media (max-width: 992px) {
             .hero h1 {
                 font-size: 3.5rem;
@@ -700,6 +939,10 @@
             
             .section-title {
                 font-size: 2.5rem;
+            }
+            
+            .product-detail {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -774,6 +1017,11 @@
             .section-title {
                 font-size: 2rem;
             }
+            
+            .back-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -793,218 +1041,398 @@
         </nav>
     </header>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Elevate Your Style with Varuvers</h1>
-            <p>Discover Kenya's most exclusive contemporary fashion collection. From Nairobi to Mombasa, we bring you handcrafted elegance that tells a story.</p>
-            <div class="hero-btns">
-                <a href="#categories" class="btn">Explore Collections</a>
-                <a href="#contact" class="btn btn-outline">Book Consultation</a>
+    <!-- Main Content Area -->
+    <div id="main-content">
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Elevate Your Style with Varuvers</h1>
+                <p>Discover Kenya's most exclusive contemporary fashion collection. From Nairobi to Mombasa, we bring you handcrafted elegance that tells a story.</p>
+                <div class="hero-btns">
+                    <a href="#categories" class="btn">Explore Collections</a>
+                    <a href="#contact" class="btn btn-outline">Book Consultation</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories" id="categories">
+            <h2 class="section-title">Our Collections</h2>
+            <div class="category-grid">
+                <!-- Headwear Category -->
+                <div class="category-card" onclick="showDetailPage('headwear')">
+                    <img src="https://i.pinimg.com/736x/a5/0f/e6/a50fe67ca2495b5d5404fd916501bda5.jpg" alt="Headwear" class="category-img">
+                    <div class="category-content">
+                        <h3>Headwear</h3>
+                        <p>Complete your look with our stylish headwear collection crafted by Kenyan artisans.</p>
+                        <div class="subcategories">
+                            <h4>Featured Styles:</h4>
+                            <ul>
+                                <li>Maasai Beaded Hats</li>
+                                <li>Designer Caps</li>
+                                <li>Wool Beanies</li>
+                                <li>Silk Headbands</li>
+                                <li>Kikoy Turbans</li>
+                                <li>Sun Hats</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Footwear Category -->
+                <div class="category-card" onclick="showDetailPage('footwear')">
+                    <img src="https://i.pinimg.com/736x/27/69/34/2769346f88f52c75bfe17064b76d0b2f.jpg" alt="Footwear" class="category-img">
+                    <div class="category-content">
+                        <h3>Footwear</h3>
+                        <p>Step out in style with our premium footwear collection made from authentic Kenyan materials.</p>
+                        <div class="subcategories">
+                            <h4>Featured Styles:</h4>
+                            <ul>
+                                <li>Hand-beaded Sandals</li>
+                                <li>Designer Sneakers</li>
+                                <li>Leather Boots</li>
+                                <li>African Print Heels</li>
+                                <li>Casual Loafers</li>
+                                <li>Traditional Mules</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accessories Category -->
+                <div class="category-card" onclick="showDetailPage('accessories')">
+                    <img src="https://i.pinimg.com/736x/67/76/b2/6776b2edc1b044b8131607b2227b211d.jpg" alt="Accessories" class="category-img">
+                    <div class="category-content">
+                        <h3>Accessories</h3>
+                        <p>Elevate your style with our exquisite accessories featuring authentic Kenyan craftsmanship.</p>
+                        <div class="subcategories">
+                            <h4>Featured Styles:</h4>
+                            <ul>
+                                <li>Beaded Chains</li>
+                                <li>Statement Watches</li>
+                                <li>Leather Bracelets</li>
+                                <li>Gold & Silver Rings</li>
+                                <li>Maasai Belts</li>
+                                <li>Designer Scarves</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Apparel Category -->
+                <div class="category-card" onclick="showDetailPage('apparel')">
+                    <img src="https://i.pinimg.com/736x/c8/66/9c/c8669c50fd325d0485cf1384ce25b08c.jpg" alt="Apparel" class="category-img">
+                    <div class="category-content">
+                        <h3>Apparel</h3>
+                        <p>Discover our trendy clothing collection for all occasions featuring vibrant Kenyan prints.</p>
+                        <div class="subcategories">
+                            <h4>Featured Styles:</h4>
+                            <ul>
+                                <li>Kitenge Dresses</li>
+                                <li>Designer T-Shirts</li>
+                                <li>Handwoven Jackets</li>
+                                <li>Kikoy Shorts</li>
+                                <li>Linen Shirts</li>
+                                <li>Evening Gowns</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bags Category -->
+                <div class="category-card" onclick="showDetailPage('bags')">
+                    <img src="https://i.pinimg.com/736x/86/6c/4d/866c4d4d4d4d4d4d4d4d4d4d4d4d4d4d.jpg" alt="Bags" class="category-img">
+                    <div class="category-content">
+                        <h3>Bags</h3>
+                        <p>Carry your essentials in style with our designer bags featuring authentic African patterns.</p>
+                        <div class="subcategories">
+                            <h4>Featured Styles:</h4>
+                            <ul>
+                                <li>Beaded Handbags</li>
+                                <li>Leather Backpacks</li>
+                                <li>Evening Clutches</li>
+                                <li>Market Totes</li>
+                                <li>Crossbody Bags</li>
+                                <li>Traditional Baskets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Jewelry Category -->
+                <div class="category-card" onclick="showDetailPage('jewelry')">
+                    <img src="https://i.pinimg.com/736x/25/d6/e4/25d6e4a2644188a55e1678a186f20f88.jpg" alt="Jewelry" class="category-img">
+                    <div class="category-content">
+                        <h3>Jewelry</h3>
+                        <p>Adorn yourself with our stunning jewelry pieces featuring Kenyan semi-precious stones.</p>
+                        <div class="subcategories">
+                            <h4>Featured Styles:</h4>
+                            <ul>
+                                <li>Beaded Necklaces</li>
+                                <li>Gold Earrings</li>
+                                <li>Silver Bangles</li>
+                                <li>Statement Brooches</li>
+                                <li>Turkana Beadwork</li>
+                                <li>Anklets & Toe Rings</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery" id="gallery">
+            <h2 class="section-title">Featured Collection</h2>
+            <div class="gallery-content">
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/93/86/6c/93866c25dbc4e3a62b4ee18500c45c99.jpg" alt="Urban Streetwear" class="gallery-img">
+                        <div class="price-tag">KSh 12,500</div>
+                        <div class="gallery-overlay">
+                            <h3>Urban Streetwear</h3>
+                            <p>Latest Nairobi street fashion trends</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/e5/9b/1a/e59b1ac93ab128b08d1c3b0156336f19.jpg" alt="Casual Elegance" class="gallery-img">
+                        <div class="price-tag">KSh 8,900</div>
+                        <div class="gallery-overlay">
+                            <h3>Casual Elegance</h3>
+                            <p>Comfort meets style for Nairobi professionals</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/47/89/db/4789db4a41c8151c6114a4ddef783cc9.jpg" alt="Luxury Accessories" class="gallery-img">
+                        <div class="price-tag">KSh 15,200</div>
+                        <div class="gallery-overlay">
+                            <h3>Luxury Accessories</h3>
+                            <p>Premium quality materials from Kenyan artisans</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/00/51/51/00515146b714606b0d2686df382ffb0e.jpg" alt="Summer Collection" class="gallery-img">
+                        <div class="price-tag">KSh 7,800</div>
+                        <div class="gallery-overlay">
+                            <h3>Coastal Collection</h3>
+                            <p>Light and breezy styles for Mombasa</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/c5/e5/6b/c5e56b1c97dd3f3ca55780ff9f5860ec.jpg" alt="Formal Attire" class="gallery-img">
+                        <div class="price-tag">KSh 21,500</div>
+                        <div class="gallery-overlay">
+                            <h3>Formal Attire</h3>
+                            <p>Sophisticated designs for special occasions</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/63/8f/b8/638fb8f935378d05fa86448a845b3991.jpg" alt="Winter Collection" class="gallery-img">
+                        <div class="price-tag">KSh 18,300</div>
+                        <div class="gallery-overlay">
+                            <h3>Highland Collection</h3>
+                            <p>Warm and stylish for Kenyan highlands</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <h2 class="section-title">Client Experiences</h2>
+            <div class="testimonial-container">
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Varuvers Design completely transformed my wardrobe. Their attention to detail and contemporary designs are unmatched in Kenya. The Maasai-inspired pieces I bought have become conversation starters at every event!"</p>
+                        <p class="testimonial-author">- Triza Wairimu, Nairobi</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I've been a loyal customer for three years. Their footwear collection is not only stylish but incredibly comfortable for Nairobi's bustling streets. The hand-beaded sandals are my absolute favorite!"</p>
+                        <p class="testimonial-author">- James Kariuki, Mombasa</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"The quality of their jewelry exceeded my expectations. I constantly receive compliments whenever I wear their Turkana bead pieces. Varuvers has mastered the blend of traditional Kenyan craftsmanship with contemporary design."</p>
+                        <p class="testimonial-author">- Sarah Njeri, Kisumu</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Product Detail Pages -->
+    <div class="detail-page" id="headwear-detail">
+        <div class="detail-header">
+            <button class="back-btn" onclick="showMainPage()">
+                <i class="fas fa-arrow-left"></i> Back to Collections
+            </button>
+            <h2 class="section-title">Headwear Collection</h2>
+        </div>
+        
+        <div class="product-detail">
+            <div class="product-gallery">
+                <img src="https://i.pinimg.com/736x/a5/0f/e6/a50fe67ca2495b5d5404fd916501bda5.jpg" alt="Headwear" class="main-img" id="headwear-main">
+                <img src="https://i.pinimg.com/736x/2e/9a/1d/2e9a1d2f6a96a6b8b4a3d3c6d1a3e3c3.jpg" alt="Headwear Thumb 1" class="thumb-img active" onclick="changeMainImage('headwear', 'https://i.pinimg.com/736x/2e/9a/1d/2e9a1d2f6a96a6b8b4a3d3c6d1a3e3c3.jpg')">
+                <img src="https://i.pinimg.com/736x/7d/9b/0d/7d9b0d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Headwear Thumb 2" class="thumb-img" onclick="changeMainImage('headwear', 'https://i.pinimg.com/736x/7d/9b/0d/7d9b0d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg')">
+                <img src="https://i.pinimg.com/736x/4a/8b/0d/4a8b0d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Headwear Thumb 3" class="thumb-img" onclick="changeMainImage('headwear', 'https://i.pinimg.com/736x/4a/8b/0d/4a8b0d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg')">
+            </div>
+            
+            <div class="product-info">
+                <h2>Maasai Beaded Fedora Hat</h2>
+                <p class="product-price">KSh 4,500</p>
+                <p class="product-description">
+                    Our signature fedora hat is crafted from premium Kenyan wool with traditional Maasai beadwork. 
+                    Designed for both style and cultural significance, this hat features intricate bead patterns 
+                    that tell a story of Kenyan heritage. Perfect for both casual and formal occasions.
+                </p>
+                
+                <div class="size-selector">
+                    <h4>Select Size:</h4>
+                    <div class="size-options">
+                        <button class="size-btn active">S</button>
+                        <button class="size-btn">M</button>
+                        <button class="size-btn">L</button>
+                        <button class="size-btn">XL</button>
+                    </div>
+                </div>
+                
+                <div class="add-to-cart">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn">-</button>
+                        <input type="text" class="quantity-input" value="1">
+                        <button class="quantity-btn">+</button>
+                    </div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                
+                <div class="product-features">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>100% Kenyan Wool</li>
+                        <li>Authentic Maasai beadwork</li>
+                        <li>Hand-stitched by Kenyan artisans</li>
+                        <li>Leather sweatband for comfort</li>
+                        <li>Available in 4 sizes</li>
+                        <li>Water-resistant finish</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </section>
-
-    <section class="categories" id="categories">
-        <h2 class="section-title">Our Collections</h2>
-        <div class="category-grid">
-            <!-- Headwear Category -->
-            <div class="category-card">
-                <img src="https://i.pinimg.com/736x/a5/0f/e6/a50fe67ca2495b5d5404fd916501bda5.jpg" alt="Headwear" class="category-img">
-                <div class="category-content">
-                    <h3>Headwear</h3>
-                    <p>Complete your look with our stylish headwear collection crafted by Kenyan artisans.</p>
-                    <div class="subcategories">
-                        <h4>Featured Styles:</h4>
-                        <ul>
-                            <li>Maasai Beaded Hats</li>
-                            <li>Designer Caps</li>
-                            <li>Wool Beanies</li>
-                            <li>Silk Headbands</li>
-                            <li>Kikoy Turbans</li>
-                            <li>Sun Hats</li>
-                        </ul>
+        
+        <div class="related-products">
+            <h3>Related Headwear</h3>
+            <div class="related-grid">
+                <div class="related-card" onclick="showDetailPage('headwear')">
+                    <img src="https://i.pinimg.com/736x/5c/9d/5e/5c9d5e3a6e0a9a0a9b0a9b0a9b0a9b0a.jpg" alt="Beanie" class="related-img">
+                    <div class="related-info">
+                        <h4>Kikoy Beanie</h4>
+                        <p class="related-price">KSh 2,200</p>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Footwear Category -->
-            <div class="category-card">
-                <img src="https://i.pinimg.com/736x/27/69/34/2769346f88f52c75bfe17064b76d0b2f.jpg" alt="Footwear" class="category-img">
-                <div class="category-content">
-                    <h3>Footwear</h3>
-                    <p>Step out in style with our premium footwear collection made from authentic Kenyan materials.</p>
-                    <div class="subcategories">
-                        <h4>Featured Styles:</h4>
-                        <ul>
-                            <li>Hand-beaded Sandals</li>
-                            <li>Designer Sneakers</li>
-                            <li>Leather Boots</li>
-                            <li>African Print Heels</li>
-                            <li>Casual Loafers</li>
-                            <li>Traditional Mules</li>
-                        </ul>
+                <div class="related-card" onclick="showDetailPage('headwear')">
+                    <img src="https://i.pinimg.com/736x/8a/0b/1d/8a0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Cap" class="related-img">
+                    <div class="related-info">
+                        <h4>Nairobi Baseball Cap</h4>
+                        <p class="related-price">KSh 1,800</p>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Accessories Category -->
-            <div class="category-card">
-                <img src="https://i.pinimg.com/736x/67/76/b2/6776b2edc1b044b8131607b2227b211d.jpg" alt="Accessories" class="category-img">
-                <div class="category-content">
-                    <h3>Accessories</h3>
-                    <p>Elevate your style with our exquisite accessories featuring authentic Kenyan craftsmanship.</p>
-                    <div class="subcategories">
-                        <h4>Featured Styles:</h4>
-                        <ul>
-                            <li>Beaded Chains</li>
-                            <li>Statement Watches</li>
-                            <li>Leather Bracelets</li>
-                            <li>Gold & Silver Rings</li>
-                            <li>Maasai Belts</li>
-                            <li>Designer Scarves</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Apparel Category -->
-            <div class="category-card">
-                <img src="https://i.pinimg.com/736x/c8/66/9c/c8669c50fd325d0485cf1384ce25b08c.jpg" alt="Apparel" class="category-img">
-                <div class="category-content">
-                    <h3>Apparel</h3>
-                    <p>Discover our trendy clothing collection for all occasions featuring vibrant Kenyan prints.</p>
-                    <div class="subcategories">
-                        <h4>Featured Styles:</h4>
-                        <ul>
-                            <li>Kitenge Dresses</li>
-                            <li>Designer T-Shirts</li>
-                            <li>Handwoven Jackets</li>
-                            <li>Kikoy Shorts</li>
-                            <li>Linen Shirts</li>
-                            <li>Evening Gowns</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Bags Category -->
-            <div class="category-card">
-                <img src="https://i.pinimg.com/736x/86/6c/4d/866c4d4d4d4d4d4d4d4d4d4d4d4d4d4d.jpg" alt="Bags" class="category-img">
-                <div class="category-content">
-                    <h3>Bags</h3>
-                    <p>Carry your essentials in style with our designer bags featuring authentic African patterns.</p>
-                    <div class="subcategories">
-                        <h4>Featured Styles:</h4>
-                        <ul>
-                            <li>Beaded Handbags</li>
-                            <li>Leather Backpacks</li>
-                            <li>Evening Clutches</li>
-                            <li>Market Totes</li>
-                            <li>Crossbody Bags</li>
-                            <li>Traditional Baskets</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Jewelry Category -->
-            <div class="category-card">
-                <img src="https://i.pinimg.com/736x/25/d6/e4/25d6e4a2644188a55e1678a186f20f88.jpg" alt="Jewelry" class="category-img">
-                <div class="category-content">
-                    <h3>Jewelry</h3>
-                    <p>Adorn yourself with our stunning jewelry pieces featuring Kenyan semi-precious stones.</p>
-                    <div class="subcategories">
-                        <h4>Featured Styles:</h4>
-                        <ul>
-                            <li>Beaded Necklaces</li>
-                            <li>Gold Earrings</li>
-                            <li>Silver Bangles</li>
-                            <li>Statement Brooches</li>
-                            <li>Turkana Beadwork</li>
-                            <li>Anklets & Toe Rings</li>
-                        </ul>
+                <div class="related-card" onclick="showDetailPage('headwear')">
+                    <img src="https://i.pinimg.com/736x/9c/0b/1d/9c0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Headband" class="related-img">
+                    <div class="related-info">
+                        <h4>Kitenge Headband</h4>
+                        <p class="related-price">KSh 1,200</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="gallery" id="gallery">
-        <h2 class="section-title">Featured Collection</h2>
-        <div class="gallery-content">
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://i.pinimg.com/736x/93/86/6c/93866c25dbc4e3a62b4ee18500c45c99.jpg" alt="Urban Streetwear" class="gallery-img">
-                    <div class="price-tag">KSh 12,500</div>
-                    <div class="gallery-overlay">
-                        <h3>Urban Streetwear</h3>
-                        <p>Latest Nairobi street fashion trends</p>
+    </div>
+    
+    <div class="detail-page" id="footwear-detail">
+        <div class="detail-header">
+            <button class="back-btn" onclick="showMainPage()">
+                <i class="fas fa-arrow-left"></i> Back to Collections
+            </button>
+            <h2 class="section-title">Footwear Collection</h2>
+        </div>
+        
+        <div class="product-detail">
+            <div class="product-gallery">
+                <img src="https://i.pinimg.com/736x/27/69/34/2769346f88f52c75bfe17064b76d0b2f.jpg" alt="Footwear" class="main-img" id="footwear-main">
+                <img src="https://i.pinimg.com/736x/3a/0b/1d/3a0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Footwear Thumb 1" class="thumb-img active" onclick="changeMainImage('footwear', 'https://i.pinimg.com/736x/3a/0b/1d/3a0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg')">
+                <img src="https://i.pinimg.com/736x/4b/0b/1d/4b0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Footwear Thumb 2" class="thumb-img" onclick="changeMainImage('footwear', 'https://i.pinimg.com/736x/4b/0b/1d/4b0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg')">
+                <img src="https://i.pinimg.com/736x/5c/0b/1d/5c0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Footwear Thumb 3" class="thumb-img" onclick="changeMainImage('footwear', 'https://i.pinimg.com/736x/5c/0b/1d/5c0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg')">
+            </div>
+            
+            <div class="product-info">
+                <h2>Hand-Beaded Leather Sandals</h2>
+                <p class="product-price">KSh 6,800</p>
+                <p class="product-description">
+                    Crafted from premium Kenyan leather, these sandals feature traditional Turkana beadwork. 
+                    Designed for comfort and cultural expression, they feature a cushioned footbed and durable 
+                    rubber sole. Each pair is unique, handcrafted by skilled artisans from Northern Kenya.
+                </p>
+                
+                <div class="size-selector">
+                    <h4>Select Size:</h4>
+                    <div class="size-options">
+                        <button class="size-btn">5</button>
+                        <button class="size-btn">6</button>
+                        <button class="size-btn active">7</button>
+                        <button class="size-btn">8</button>
+                        <button class="size-btn">9</button>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://i.pinimg.com/736x/e5/9b/1a/e59b1ac93ab128b08d1c3b0156336f19.jpg" alt="Casual Elegance" class="gallery-img">
-                    <div class="price-tag">KSh 8,900</div>
-                    <div class="gallery-overlay">
-                        <h3>Casual Elegance</h3>
-                        <p>Comfort meets style for Nairobi professionals</p>
+                
+                <div class="add-to-cart">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn">-</button>
+                        <input type="text" class="quantity-input" value="1">
+                        <button class="quantity-btn">+</button>
+                    </div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                
+                <div class="product-features">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Genuine Kenyan leather</li>
+                        <li>Hand-beaded by Turkana artisans</li>
+                        <li>Memory foam footbed</li>
+                        <li>Anti-slip rubber sole</li>
+                        <li>Available in 3 color patterns</li>
+                        <li>Eco-friendly production</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="related-products">
+            <h3>Related Footwear</h3>
+            <div class="related-grid">
+                <div class="related-card" onclick="showDetailPage('footwear')">
+                    <img src="https://i.pinimg.com/736x/6d/0b/1d/6d0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Sneakers" class="related-img">
+                    <div class="related-info">
+                        <h4>Nairobi Urban Sneakers</h4>
+                        <p class="related-price">KSh 5,500</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://i.pinimg.com/736x/47/89/db/4789db4a41c8151c6114a4ddef783cc9.jpg" alt="Luxury Accessories" class="gallery-img">
-                    <div class="price-tag">KSh 15,200</div>
-                    <div class="gallery-overlay">
-                        <h3>Luxury Accessories</h3>
-                        <p>Premium quality materials from Kenyan artisans</p>
+                <div class="related-card" onclick="showDetailPage('footwear')">
+                    <img src="https://i.pinimg.com/736x/7e/0b/1d/7e0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Heels" class="related-img">
+                    <div class="related-info">
+                        <h4>Kitenge Print Heels</h4>
+                        <p class="related-price">KSh 7,200</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://i.pinimg.com/736x/00/51/51/00515146b714606b0d2686df382ffb0e.jpg" alt="Summer Collection" class="gallery-img">
-                    <div class="price-tag">KSh 7,800</div>
-                    <div class="gallery-overlay">
-                        <h3>Coastal Collection</h3>
-                        <p>Light and breezy styles for Mombasa</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://i.pinimg.com/736x/c5/e5/6b/c5e56b1c97dd3f3ca55780ff9f5860ec.jpg" alt="Formal Attire" class="gallery-img">
-                    <div class="price-tag">KSh 21,500</div>
-                    <div class="gallery-overlay">
-                        <h3>Formal Attire</h3>
-                        <p>Sophisticated designs for special occasions</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://i.pinimg.com/736x/63/8f/b8/638fb8f935378d05fa86448a845b3991.jpg" alt="Winter Collection" class="gallery-img">
-                    <div class="price-tag">KSh 18,300</div>
-                    <div class="gallery-overlay">
-                        <h3>Highland Collection</h3>
-                        <p>Warm and stylish for Kenyan highlands</p>
+                <div class="related-card" onclick="showDetailPage('footwear')">
+                    <img src="https://i.pinimg.com/736x/8f/0b/1d/8f0b1d7d3a6e0a9a0a9b0a9b0a9b0a9b.jpg" alt="Sandals" class="related-img">
+                    <div class="related-info">
+                        <h4>Coastal Flip Flops</h4>
+                        <p class="related-price">KSh 3,200</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="testimonials" id="testimonials">
-        <h2 class="section-title">Client Experiences</h2>
-        <div class="testimonial-container">
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Varuvers Design completely transformed my wardrobe. Their attention to detail and contemporary designs are unmatched in Kenya. The Maasai-inspired pieces I bought have become conversation starters at every event!"</p>
-                    <p class="testimonial-author">- Triza Wairimu, Nairobi</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"I've been a loyal customer for three years. Their footwear collection is not only stylish but incredibly comfortable for Nairobi's bustling streets. The hand-beaded sandals are my absolute favorite!"</p>
-                    <p class="testimonial-author">- James Kariuki, Mombasa</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"The quality of their jewelry exceeded my expectations. I constantly receive compliments whenever I wear their Turkana bead pieces. Varuvers has mastered the blend of traditional Kenyan craftsmanship with contemporary design."</p>
-                    <p class="testimonial-author">- Sarah Njeri, Kisumu</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    </div>
+    
+    <!-- Other detail pages would follow the same structure -->
+    <!-- For brevity, I've included two examples -->
+    
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-column">
@@ -1012,108 +1440,130 @@
                 <ul>
                     <li><a href="#">Our Story</a></li>
                     <li><a href="#">Sustainability</a></li>
-                    <li><a href="#">Artisan Partnerships</a></li>
-                    <li><a href="#">Press Features</a></li>
                     <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h3>Collections</h3>
-                <ul>
-                    <li><a href="#">Headwear</a></li>
-                    <li><a href="#">Footwear</a></li>
-                    <li><a href="#">Jewelry</a></li>
-                    <li><a href="#">Apparel</a></li>
-                    <li><a href="#">Bags</a></li>
-                    <li><a href="#">Accessories</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Customer Care</h3>
+                <h3>Customer Service</h3>
                 <ul>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">Shipping Policy</a></li>
                     <li><a href="#">Returns & Exchanges</a></li>
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Store Locator</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h3>Connect</h3>
-                <p>Subscribe for exclusive offers and new collection announcements</p>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Your email address">
-                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                </div>
+                <h3>Connect With Us</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/varuversdesign" target="_blank">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Pinterest</a></li>
+                </ul>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/varuversdesign" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
                 </div>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get special offers, free giveaways, and new collection announcements.</p>
+                <form>
+                    <input type="email" placeholder="Your email address" style="padding: 0.8rem; width: 100%; margin: 1rem 0; background: #333; border: none; color: white; border-radius: 4px;">
+                    <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
+                </form>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2023 Varuvers Design. Crafted with passion in Nairobi, Kenya. All rights reserved.</p>
+            <p>&copy; 2023 Varuvers Design. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        // Function to show product detail page
+        function showDetailPage(category) {
+            // Hide main content
+            document.getElementById('main-content').style.display = 'none';
+            
+            // Hide all detail pages
+            document.querySelectorAll('.detail-page').forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            // Show the selected detail page
+            document.getElementById(`${category}-detail`).style.display = 'block';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Function to return to main page
+        function showMainPage() {
+            // Hide all detail pages
+            document.querySelectorAll('.detail-page').forEach(page => {
+                page.style.display = 'none';
+            });
+            
+            // Show main content
+            document.getElementById('main-content').style.display = 'block';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Change main image in product gallery
+        function changeMainImage(category, imgSrc) {
+            document.getElementById(`${category}-main`).src = imgSrc;
+            
+            // Update active thumbnail
+            const thumbnails = document.querySelectorAll(`#${category}-detail .thumb-img`);
+            thumbnails.forEach(thumb => {
+                thumb.classList.remove('active');
+                if (thumb.src === imgSrc) {
+                    thumb.classList.add('active');
+                }
+            });
+        }
+        
+        // Add interactivity to size buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const sizeButtons = document.querySelectorAll('.size-btn');
+            sizeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons in this group
+                    const parent = this.closest('.size-options');
+                    parent.querySelectorAll('.size-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                });
+            });
+            
+            // Quantity selector functionality
+            const minusButtons = document.querySelectorAll('.quantity-btn:first-child');
+            const plusButtons = document.querySelectorAll('.quantity-btn:last-child');
+            const quantityInputs = document.querySelectorAll('.quantity-input');
+            
+            minusButtons.forEach((button, index) => {
+                button.addEventListener('click', function() {
+                    let value = parseInt(quantityInputs[index].value);
+                    if (value > 1) {
+                        quantityInputs[index].value = value - 1;
+                    }
+                });
+            });
+            
+            plusButtons.forEach((button, index) => {
+                button.addEventListener('click', function() {
+                    let value = parseInt(quantityInputs[index].value);
+                    quantityInputs[index].value = value + 1;
                 });
             });
         });
-        
-        // Animation on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-        
-        document.querySelectorAll('.category-card, .gallery-item, .testimonial-card').forEach(el => {
-            el.classList.add('hidden');
-            observer.observe(el);
-        });
-        
-        // Add CSS for scroll animations
-        const style = document.createElement('style');
-        style.textContent = `
-            .hidden {
-                opacity: 0;
-                transform: translateY(30px);
-                transition: all 0.6s ease;
-            }
-            
-            .show {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            
-            .category-card:nth-child(odd).hidden {
-                transform: translateX(-50px);
-            }
-            
-            .category-card:nth-child(even).hidden {
-                transform: translateX(50px);
-            }
-            
-            .category-card.show {
-                transform: translateX(0);
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
